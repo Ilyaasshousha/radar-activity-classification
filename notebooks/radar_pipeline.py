@@ -32,7 +32,7 @@ DATA_ROOT = PROJECT_ROOT / "data" / "Dataset_848"
 CACHE_ROOT = PROJECT_ROOT / "cache"
 
 # README datasheet numbering (authoritative). The provided Label_extract4.m
-# comment swaps 4 and 5; we follow the README (decisions D4).
+# comment swaps 4 and 5; the README datasheet is the side we follow.
 ACTIVITY_NAMES = {
     1: "walk", 2: "sit", 3: "stand", 4: "pick", 5: "drink", 6: "fall",
 }
@@ -102,7 +102,7 @@ def parse_filename(path):
     """Filename KPxxAyyRz.dat -> dict(dataset, subject, activity, rep, ...).
 
     The activity is taken from the Ayy field (the field Label_extract4.m reads);
-    the leading digit K is a redundant copy with 3 known typos (decision D6).
+    the leading digit K is a redundant copy with 3 known typos, so we read Ayy.
     The dataset id is the leading integer of the parent folder name.
     """
     p = Path(path)
@@ -332,7 +332,7 @@ def extract_features(img_linear, velocity=None):
     torso_frac = p[torso, :].sum() / e_total
     limb_frac = 1.0 - torso_frac
 
-    # Positive vs negative Doppler energy (approach vs recede asymmetry).
+    # Positive vs negative Doppler energy (Doppler-sign asymmetry).
     pos = velocity > 0
     neg = velocity < 0
     pos_frac = p[pos, :].sum() / e_total

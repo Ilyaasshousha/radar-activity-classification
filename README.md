@@ -5,8 +5,9 @@ six daily activities (walking, sitting down, standing up, picking up, drinking,
 falling) from their micro-Doppler signatures, and measure how well the model
 travels from young lab subjects to elderly people in care homes.
 
+Group members: Akram Chakrouni, Adam El Haddouchi, Ilyaas Shousha
+
 ## Deliverables
-- `1pager.pdf` - one-page description of the implementation and ideas (added separately).
 - `notebooks/` - the runnable build (start at `notebooks/README.md`).
 - `models/` - the trained models (`svm_ds1`, `cnn_ds1`, `svm_lab`).
 - `figures/` - figures used in the 1-pager and presentation.
@@ -24,8 +25,6 @@ notebooks/     five notebooks (01 index, 02 DSP+cache, 03 SVM, 04 CNN, 05 transf
 notebooks/radar_pipeline.py   the one verified implementation, imported by all
 models/        saved trained models
 figures/       figures for the 1-pager and presentation
-data/          the Glasgow INSHEP dataset (provided separately, not included)
-cache/         preprocessed spectrograms (built by notebook 02)
 ```
 
 ## Reproduce
