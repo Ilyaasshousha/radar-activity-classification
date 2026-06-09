@@ -1,0 +1,14 @@
+# Direct dependencies. Versions are left unpinned because no project virtual
+# environment was available to read installed versions from.
+numpy
+scipy
+scikit-learn
+matplotlib
+pillow
+tqdm
+pandas
+joblib
+torch
+torchvision
+jupyter
+ipykernel
